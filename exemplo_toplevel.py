@@ -14,7 +14,7 @@ class Tela():
         self.toplevel.title('top Level Janela')
         #self.janela.withdraw() #Oculta a janela principal
         self.toplevel.grab_set() #Fixar toplevel
-        btn2 = tk.Button(self.toplevel, text='Back', command='voltar').pack()
+        btn2 = tk.Button(self.toplevel, text='Back', command=self.voltar).pack()
 
     def voltar(self):
         self.janela.destroy()
