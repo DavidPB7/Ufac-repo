@@ -2,14 +2,14 @@
 #include <string.h>
 #include <mpi.h>
 
-
 // 4 - Faça um programa em MPI
 // que some duas matrizes 2x2.
 
 int main(int argc, char** argv) {
-    int meu_rank, np, origem, destino, tag = 0;
-    int valor, velocidade, distancia, tempo;
-
+    int meu_rank, np, origem, tag = 0;
+    int mat1[2][2] = {{2, 2}, {2, 2}};
+    int mat2[2][2] = {{3, 3}, {3, 3}};
+    int matS[2][2];
 
     MPI_Status status;
     MPI_Init(&argc, &argv);
@@ -17,34 +17,39 @@ int main(int argc, char** argv) {
     MPI_Comm_size(MPI_COMM_WORLD, &np);
     printf("----------Q4----------");
 
-
-    if (meu_rank != 0) {
-        if(meu_rank == 1) {
-            destino = 0;
-            printf("Informe uma distancia para o processo %d: ", meu_rank);
-            scanf("%d", &valor);
-            MPI_Send(&valor, 1, MPI_INT, destino, tag, MPI_COMM_WORLD);
-    } else {
-            destino = 0;
-            printf("Informe um tempo para o processo %d: ", meu_rank);
-            scanf("%d", &valor);
-            MPI_Send(&valor, 1, MPI_INT, destino, tag, MPI_COMM_WORLD);
-        }
-    } else {
-        for (origem = 1; origem < np; origem++) {
-            MPI_Recv(&valor, 1, MPI_INT, origem, tag, MPI_COMM_WORLD, &status);
-            lista[origem - 1] = valor;
-        }
-        distancia = lista[0];
-        tempo = lista[1];
-
-
-        velocidade = distancia/tempo
-
-
-        printf("Velocidade de  %d\n", velocidade);
+    printf("\n");
+    printf("Matriz 01:\n");
+    for (int i = 0; i < 2; i++) {
+       for (int j = 0; j < 2; j++) {
+           printf("(%d) ", mat1[i][j]);
+       }
     }
-   
+
+    printf("\n");
+    printf("Matriz 02:\n");
+    for (int i = 0; i < 2; i++) {
+       for (int j = 0; j < 2; j++) {
+           printf("(%d) ", mat2[i][j]);
+       }
+    }
+
+    printf("\n");
+    if (meu_rank == 0) {
+        MPI_Send(&mat1, 2*2, MPI_INT, 1, tag, MPI_COMM_WORLD);
+        MPI_Send(&mat2, 2*2, MPI_INT, 2, tag, MPI_COMM_WORLD);
+
+    } else {
+        MPI_Recv(&mat1, 2*2, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
+        MPI_Recv(&mat2, 2*2, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
+        
+        printf("Matriz Soma: \n")
+        for(i = 0; i < 3; i++) {
+            for(j = 0; j < 3; j++) {
+                matS[i][j] = mat1[i][j] + mat2[i][j];   
+                printf("(%d) \n", i, j, matS[i][j]);
+            }
+	    }
+    }
     MPI_Finalize();
     return 0;
 }
