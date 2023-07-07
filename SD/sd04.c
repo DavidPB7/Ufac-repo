@@ -46,9 +46,9 @@ int main(int argc, char** argv) {
         for(i = 0; i < 3; i++) {
             for(j = 0; j < 3; j++) {
                 matS[i][j] = mat1[i][j] + mat2[i][j];   
-                printf("(%d) \n", i, j, matS[i][j]);
+                printf("(%d)\n", matS[i][j]);
             }
-	    }
+	}
     }
     MPI_Finalize();
     return 0;
