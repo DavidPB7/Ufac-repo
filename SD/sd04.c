@@ -35,8 +35,8 @@ int main(int argc, char** argv) {
 
     printf("\n");
     if (meu_rank == 0) {
-        MPI_Send(&mat1, 2*2, MPI_INT, 1, tag, MPI_COMM_WORLD);
-        MPI_Send(&mat2, 2*2, MPI_INT, 2, tag, MPI_COMM_WORLD);
+        MPI_Send(mat1, 2*2, MPI_INT, 1, tag, MPI_COMM_WORLD);
+        MPI_Send(mat2, 2*2, MPI_INT, 2, tag, MPI_COMM_WORLD);
 
     } else {
         MPI_Recv(&mat1, 2*2, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
