@@ -36,7 +36,7 @@ class Tela:
         self.lbl_frm_three = tk.LabelFrame(self.janela, text='Funcionalidades', font=('Tahoma', 12), height=100, width=100, border=0)
         self.lbl_frm_three.pack(anchor=tk.CENTER, pady=10)
 
-        self.lbl_one = tk.Button(self.lbl_frm_three, text='Transferir', borderwidth=2, relief='groove', pady=15, padx=15, command="telaTransfere")
+        self.lbl_one = tk.Button(self.lbl_frm_three, text='Transferir', borderwidth=2, relief='groove', pady=15, padx=15, command=self.telaTransfere)
         self.lbl_one.grid(row=0, column=0)
 
         self.lbl_two = tk.Button(self.lbl_frm_three, text='Sacar', borderwidth=2, relief='groove', pady=15, padx=15)
@@ -62,8 +62,15 @@ class Tela:
         self.btn_two.grid(row=0, column=1)
 
 
-    def telaTransfere():
+    def telaTransfere(self):
         self.janela.withdraw()
+        self.telaTransfere = tk.Toplevel()
+    
+        # Configurações da nova janela
+        self.telaTransfere.title("Nova Janela")
+        self.telaTransfere.geometry("300x200")
+
+        
         
 
 app = tk.Tk()
