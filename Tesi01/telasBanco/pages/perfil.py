@@ -32,34 +32,41 @@ class Tela:
 
         # Label Frame 02
 
-        self.lbl_frm_three = tk.LabelFrame(self.janela, text='Funcionalidades: ', font=('Tahoma', 12), height=100, width=100, border=0)
+        self.lbl_frm_three = tk.LabelFrame(self.janela, text='Funcionalidades: ', font=('Tahoma', 12), height=100,
+                                           width=100, border=0)
         self.lbl_frm_three.pack(anchor=tk.CENTER, pady=10)
 
-        self.lbl_one = tk.Button(self.lbl_frm_three, text='Transferir', borderwidth=2, relief='groove', pady=15, padx=15, command=self.telaTransfere)
+        self.lbl_one = tk.Button(self.lbl_frm_three, text='Transferir', borderwidth=2, relief='groove', pady=15,
+                                 padx=15, command=self.telaTransfere)
         self.lbl_one.grid(row=0, column=0)
 
-        self.lbl_two = tk.Button(self.lbl_frm_three, text='Sacar', borderwidth=2, relief='groove', pady=15, padx=15, command=self.telaSaca)
+        self.lbl_two = tk.Button(self.lbl_frm_three, text='Sacar', borderwidth=2, relief='groove', pady=15, padx=15,
+                                 command=self.telaSaca)
         self.lbl_two.grid(row=0, column=1)
 
-        self.lbl_three = tk.Button(self.lbl_frm_three, text='Depositar', borderwidth=2, relief='groove', pady=15, padx=15, command=self.telaDeposito)
+        self.lbl_three = tk.Button(self.lbl_frm_three, text='Depositar', borderwidth=2, relief='groove', pady=15,
+                                   padx=15, command=self.telaDeposito)
         self.lbl_three.grid(row=0, column=2)
 
-        self.four_pass = tk.Button(self.lbl_frm_three, text='Relatórios', borderwidth=2, relief='groove', pady=15, padx=15)
+        self.four_pass = tk.Button(self.lbl_frm_three, text='Relatórios', borderwidth=2, relief='groove', pady=15,
+                                   padx=15)
         self.four_pass.grid(row=0, column=3)
         #
         # self.lbl_four = tk.Button(self.lbl_frm_three, text='Detalhes da conta')
         # self.lbl_four.grid(row=2, column=0, columnspan=2)
 
 
+
+
     # Tela detalhes da conta
     def detalhes(self):
-        self.janela_detalhes = self.janela
+        self.janela_principal = self.janela
 
         self.janela.withdraw()
         self.janela_detalhes = tk.Toplevel()
 
         self.janela_detalhes.title("Detalhes")
-        self.janela_detalhes("400x400")
+        self.janela_detalhes.geometry("400x400")
 
         def voltar():
             self.janela_detalhes.destroy()
@@ -68,11 +75,15 @@ class Tela:
         btn_voltar = tk.Button(self.janela_detalhes, text="Voltar", borderwidth=1, relief='ridge', command=voltar)
         btn_voltar.pack(anchor="nw", pady=5, padx=5)
 
+
+
+
+
     #  Tela para sacar
     def telaSaca(self):
         self.janela_principal = self.janela  # Salvar a referência à janela principal
 
-        #Variaveis do Entry para validação
+        # Variaveis do Entry para validação
         self.validate_valor = tk.StringVar()
         self.validate_valor.set(' ')
 
@@ -108,22 +119,22 @@ class Tela:
         self.rbt2 = tk.Radiobutton(self.frm_label1, text='Conta Corrente', value='pc')
         self.rbt2.pack()
 
-        # def confirmar():
-        #     valor = self.validate_valor
-
-        #     if (valor == '') or (valor == 0):
-        #         messagebox.showinfo('Aviso', 'Valor está incorreto! Tente novamente!')
-        #     else:
-        #         self.janela.withdraw()
-        #         self.home_page()
-
-        self.lbl04 = tk.Button(self.frm_label1, text="Sacar", width=7, height=1, font=4, bg="#50fa7d", activebackground = '#0afa49', command=confirmar)
+        self.lbl04 = tk.Button(self.frm_label1, text="Confirmar", width=7, height=1, font=4, bg="#50fa7d", activebackground='#0afa49', command=self.confirmar)
         self.lbl04.pack(pady=5)
 
-        
+
+
+
+
+
+
     # Tela para transfência
     def telaTransfere(self):
         self.janela_principal = self.janela  # Salvar a referência à janela principal
+
+        # Variaveis do Entry para validação
+        self.validate_valor = tk.StringVar()
+        self.validate_valor.set(' ')
 
         self.janela.withdraw()
         self.janela_transfere = tk.Toplevel()
@@ -157,12 +168,19 @@ class Tela:
         self.rbt2 = tk.Radiobutton(self.frm_label2, text='Conta Corrente', value='pc')
         self.rbt2.pack()
 
-        self.lbl04 = tk.Button(self.frm_label2, text="Confirmar", width=7, height=1, font=4, bg="#50fa7d", activebackground = '#0afa49')
+        self.lbl04 = tk.Button(self.frm_label2, text="Confirmar", width=7, height=1, font=4, bg="#50fa7d", activebackground='#0afa49',  command=self.confirmar)
         self.lbl04.pack(pady=5)
+
+
+
 
     # Tela para Deposito
     def telaDeposito(self):
         self.janela_principal = self.janela  # Salvar a referência à janela principal
+
+        # Variaveis do Entry para validação
+        self.validate_valor = tk.StringVar()
+        self.validate_valor.set(' ')
 
         self.janela.withdraw()
         self.janela_deposito = tk.Toplevel()
@@ -196,18 +214,26 @@ class Tela:
         self.rbt2 = tk.Radiobutton(self.frm_label3, text='Conta Corrente', value='pc')
         self.rbt2.pack()
 
-        self.lbl04 = tk.Button(self.frm_label3, text="Confirmar", width=7, height=1, font=4, bg="#50fa7d", activebackground = '#0afa49')
+        self.lbl04 = tk.Button(self.frm_label3, text="Confirmar", width=7, height=1, font=4, bg="#50fa7d", activebackground='#0afa49',  command=self.confirmar)
         self.lbl04.pack(pady=5)
 
-            
+    def confirmar(self):
+        valor = self.validate_valor
+
+        if (valor == ' ') or (valor == 0):
+            messagebox.showinfo('Aviso', 'Valor está incorreto! Tente novamente!')
+        else:
+            messagebox.showinfo('Aviso', 'Operação realizada com sucesso!!')
+            self.janela.withdraw()
+            self.janela.deiconify()
+
+
+
 app = tk.Tk()
 Tela(app)
 app.mainloop()
 
-
-
-
-#Apagar texto de um entry como um placeholder
+# Apagar texto de um entry como um placeholder
 
 # def on_entry_click(event):
 #     if entry.get() == "Digite aqui":
