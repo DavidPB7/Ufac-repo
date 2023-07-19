@@ -61,10 +61,9 @@ class Tela:
     # Tela detalhes da conta
     def detalhes(self):
         self.janela_principal = self.janela
-
         self.janela.withdraw()
-        self.janela_detalhes = tk.Toplevel()
 
+        self.janela_detalhes = tk.Toplevel()
         self.janela_detalhes.title("Detalhes")
         self.janela_detalhes.geometry("400x400")
 
@@ -82,15 +81,14 @@ class Tela:
     #  Tela para sacar
     def telaSaca(self):
         self.janela_principal = self.janela  # Salvar a referência à janela principal
+        self.janela.withdraw()
 
         # Variaveis do Entry para validação
         self.validate_valor = tk.StringVar()
         self.validate_valor.set(' ')
 
-        self.janela.withdraw()
-        self.janela_saca = tk.Toplevel()
 
-        # Configurações da nova janela
+        self.janela_saca = tk.Toplevel()
         self.janela_saca.title("Saque")
         self.janela_saca.geometry("400x400")
 
@@ -131,15 +129,13 @@ class Tela:
     # Tela para transfência
     def telaTransfere(self):
         self.janela_principal = self.janela  # Salvar a referência à janela principal
+        self.janela.withdraw()
 
         # Variaveis do Entry para validação
         self.validate_valor = tk.StringVar()
         self.validate_valor.set(' ')
-
-        self.janela.withdraw()
+        
         self.janela_transfere = tk.Toplevel()
-
-        # Configurações da nova janela
         self.janela_transfere.title("Transferência")
         self.janela_transfere.geometry("400x400")
 
