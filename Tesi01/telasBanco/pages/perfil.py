@@ -74,9 +74,13 @@ class Tela:
         btn_voltar = tk.Button(self.janela_detalhes, text="Voltar", borderwidth=1, relief='ridge', command=voltar)
         btn_voltar.pack(anchor="nw", pady=5, padx=5)
 
+        self.lbl_detalhes = tk.LabelFrame(self.janela_detalhes, text="Minha Conta").pack()
 
+        self.lbl_nome = tk.Label(self.lbl_detalhes, text="Nome: Carlos da Silva").pack()
+        self.lbl_tipo_conta = tk.Label(self.lbl_detalhes, text="Tipo da Conta: Corrente e Poupança").pack()
+        self.email = tk.Label(self.lbl_detalhes,  text="carlin132@gmail.com").pack()
 
-
+    
 
     #  Tela para sacar
     def telaSaca(self):
