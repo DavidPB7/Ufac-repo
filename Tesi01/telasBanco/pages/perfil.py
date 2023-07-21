@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import ttk
+from relatorio import Relatorio
 
 
 class Tela:
@@ -12,7 +13,7 @@ class Tela:
 
 
         # Label Frame 01
-        self.lbl_frm_one = tk.LabelFrame(self.janela, text='Minha Conta: ', font=('Tahoma', 12), height=100, width=100)
+        self.lbl_frm_one = tk.LabelFrame(self.janela, text='Meu Perfil: ', font=('Tahoma', 12), height=100, width=100)
         self.lbl_frm_one.pack(anchor=tk.CENTER, pady=10)
 
         self.lbl_one = tk.Label(self.lbl_frm_one, text='Foto', borderwidth=4, relief='groove', pady=30, padx=30)
@@ -49,12 +50,17 @@ class Tela:
         self.lbl_three.grid(row=0, column=2)
 
         self.four_pass = tk.Button(self.lbl_frm_three, text='Relatórios', borderwidth=2, relief='groove', pady=15,
-                                   padx=15)
+                                   padx=15, command=self.mostra_relatorio)
         self.four_pass.grid(row=0, column=3)
         #
         # self.lbl_four = tk.Button(self.lbl_frm_three, text='Detalhes da conta')
         # self.lbl_four.grid(row=2, column=0, columnspan=2)
 
+    def mostra_relatorio(self):
+        self.janela_principal = self.janela
+
+        janela_relatorio = tk.Toplevel()
+        Relatorio(janela_relatorio)
 
 
 
@@ -74,13 +80,15 @@ class Tela:
         btn_voltar = tk.Button(self.janela_detalhes, text="Voltar", borderwidth=1, relief='ridge', command=voltar)
         btn_voltar.pack(anchor="nw", pady=5, padx=5)
 
-        self.lbl_detalhes = tk.LabelFrame(self.janela_detalhes, text="Minha Conta").pack()
+        self.lbl_detalhes = tk.LabelFrame(self.janela_detalhes, text="Minha Conta", font=('Tahoma', 12), height=100, width=100)
+        self.lbl_detalhes.pack(anchor="center")
 
-        self.lbl_nome = tk.Label(self.lbl_detalhes, text="Nome: Carlos da Silva").pack()
-        self.lbl_tipo_conta = tk.Label(self.lbl_detalhes, text="Tipo da Conta: Corrente e Poupança").pack()
-        self.email = tk.Label(self.lbl_detalhes,  text="carlin132@gmail.com").pack()
-
-    
+        self.lbl_nome = tk.Label(self.lbl_detalhes, text="Nome: Carlos da Silva")
+        self.lbl_nome.pack()
+        self.lbl_tipo_conta = tk.Label(self.lbl_detalhes, text="Tipo da Conta: Corrente e Poupança")
+        self.lbl_tipo_conta.pack()
+        self.email = tk.Label(self.lbl_detalhes,  text="carlin132@gmail.com")
+        self.email.pack()
 
     #  Tela para sacar
     def telaSaca(self):

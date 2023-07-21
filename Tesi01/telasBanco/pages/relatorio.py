@@ -1,22 +1,23 @@
 import tkinter as tk
 from tkinter import ttk
 
-class Tela():
+
+class Relatorio():
     def __init__(self, master):
         self.janela = master
-        colunas = ('nome', 'telefone', 'email')
+        colunas = ('nome', 'operacao', 'valor')
         self.tvw = ttk.Treeview(self.janela, columns=colunas, height=5, show='headings')
         self.tvw.grid()
 
         #Cabeçalho
         self.tvw.heading('nome', text='Nome')
-        self.tvw.heading('telefone', text='Telefone')
-        self.tvw.heading('email', text='E-mail')
+        self.tvw.heading('operacao', text='Operação')
+        self.tvw.heading('valor', text='Valor')
 
         #Colunas
         self.tvw.column('nome', minwidth=200, width=200)
-        self.tvw.column('telefone', minwidth=100, width=100)
-        self.tvw.column('email', minwidth=300, width=300)
+        self.tvw.column('operacao', minwidth=100, width=100)
+        self.tvw.column('valor', minwidth=300, width=300)
 
         #Linhas
         self.tvw.insert('', 'end', values=['Limeira', '99999', 'limeira@ufac'])
@@ -42,5 +43,5 @@ class Tela():
 
 
 app = tk.Tk()
-Tela(app)
+Relatorio(app)
 app.mainloop()
