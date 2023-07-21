@@ -61,7 +61,7 @@ int main(int argc, char** argv)
 		MPI_Recv(r2, 5, MPI_INT, 2, tag, MPI_COMM_WORLD, &status);
 		MPI_Recv(r3, 5, MPI_INT, 3, tag, MPI_COMM_WORLD, &status);
 		MPI_Recv(r4, 5, MPI_INT, 4, tag, MPI_COMM_WORLD, &status);
-		MPI_Recv(r5, 5, MPI_INT, 5, tag, MPI_CCOM_WORLD, &status);
+		MPI_Recv(r5, 5, MPI_INT, 5, tag, MPI_COMM_WORLD, &status);
 		
 
 		for(i=0;i<5;i++)
@@ -120,6 +120,7 @@ int main(int argc, char** argv)
                 for (i=0;i<5;i++)
                         r4[i] = a[i]+b[i];
                 MPI_Send(r4, 5, MPI_INT, 0, tag, MPI_COMM_WORLD);
+	}
 	else {
 		MPI_Recv(a, 5, MPI_INT, 0, tag, MPI_COMM_WORLD, &status);
                 MPI_Recv(b, 5, MPI_INT, 0, tag, MPI_COMM_WORLD, &status);
