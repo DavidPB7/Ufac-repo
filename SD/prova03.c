@@ -5,7 +5,7 @@
 int main(int argc, char** argv)
 {
         int meu_rank, tag=0;
-	int a[3], b[3], matc[3][3], i, j, r1[3], r2[3], r3[3], r4[3], r5[3];
+	int a[3], b[3], matc[3][3], i, j, r1;
 
         MPI_Status status;
         MPI_Init(&argc, &argv);
@@ -20,7 +20,7 @@ int main(int argc, char** argv)
       for(int j=0; j<3;i++){
         
         a = mata[i][j];
-		    b = matb[j][i];
+	b = matb[j][i];
         
         MPI_Send(a, 1, MPI_INT, 1, tag, MPI_COMM_WORLD);
         MPI_Send(b, 1, MPI_INT, 1, tag, MPI_COMM_WORLD);
@@ -34,28 +34,24 @@ int main(int argc, char** argv)
         matMult[i][j]=r1;
       }
     }
-
-    
 		for(int i=0;i<3;i++) { 
 			for(int j=0;j<3;j++)
-        
 				printf("%d\t",matc[i][j]);
-			    printf("\n");
+			 	printf("\n");
 		}
 	}
 
   else {
     for(int i=0;i<3;i++) { 
-			for(int j=0;j<3;j++){
+	for(int j=0;j<3;j++){
 
-        MPI_Recv(a, 1, MPI_INT, 0, tag, MPI_COMM_WORLD, &status);
-		    MPI_Recv(b, 1, MPI_INT, 0, tag, MPI_COMM_WORLD, &status);
+        	MPI_Recv(a, 1, MPI_INT, 0, tag, MPI_COMM_WORLD, &status);
+		MPI_Recv(b, 1, MPI_INT, 0, tag, MPI_COMM_WORLD, &status);
 
-        r1 = a*b;
-		    MPI_Send(r1, 1, MPI_INT, 0, tag, MPI_COMM_WORLD);
-        
-      }
+        	r1 = a*b;
+		MPI_Send(r1, 1, MPI_INT, 0, tag, MPI_COMM_WORLD);
+      	}
     }
-	}
+}
   MPI_Finalize( );
 }
