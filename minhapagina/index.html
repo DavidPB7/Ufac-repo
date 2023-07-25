@@ -1,41 +1,49 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Scripts em JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" defer></script>
+    <!-- Loader-Progress-Bar -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js"></script>
 
+    <!-- Parallax -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+
+    <!-- Scripts em JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"
+        defer></script>
+
+    <!-- Script em JS -->
     <script src="scripts.js" defer></script>
 
-    <!-- Ícones - Font Awesome -->
-    <script src="https://kit.fontawesome.com/6c57f270a1.js" crossorigin="anonymous"></script>
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/f3b35e74c0.js" crossorigin="anonymous"></script>
 
-    <!-- Loader - Progress Bar -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/0.6.1/progressbar.min.js"></script>
 
+    <title>Document</title>
 </head>
 
 <body>
-    
-    <!-- Header -->
 
-    <!-- Slideshow -->
+    <!-- header -->
 
-    <!-- Sobre o MVP Studio -->
+    <!-- SlideShow -->
+
+    <!-- sobre o MVP Studio -->
     <main>
         <div id="about-area" class="container-fluid">
             <div class="row">
@@ -44,124 +52,203 @@
                         Sobre o MVP Studio
                     </h2>
                 </div>
-                <div class="col-12 col-md-6">
-                    <img class="img-fluid" src="img/agencia.jpg" alt="MVP Studio">
-                </div>
                 <div class="col-md-6">
-                    <h4 id="about-title">Uma agencia que pensa no futuro</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p>veja nossos diferenciais</p>
+                    <img class="img-fluid" src="img/agencia.jpg" alt="Cinque Terre">
+                </div>
+                <div class="col-md-6 ">
+                    <h4 class="title-uppercase">Uma agencia que pensa no futuro</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid iusto cupiditate vel cum aperiam
+                        minus , ratione saepe facilis.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid iusto cupiditate vel cum
+                        aperiam minus veritatis, ratione saepe facilis.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid iusto cupiditate vel cumaperiam
+                        minus veritatis doloremque, ratione saepe facilis.
+                    </p>
+                    <p> Veja nossos diferenciais:</p>
                     <ul id="about-list">
-                        <li> <i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                        <li> <i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                        <li> <i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                        <li> <i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                        <li> <i class="fas fa-check"></i>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        <li> <i class="fas fa-check"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        <li> <i class="fas fa-check"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        <li> <i class="fas fa-check"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        <li> <i class="fas fa-check"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        <li> <i class="fas fa-check"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
                     </ul>
+                </div>
             </div>
-        </div>        
+        </div>
     </main>
-
-
-    <!-- Serviços -->
-
-     <!--Service-->
-
-     <div id="service-area" class="container-fluid">
+    <!-- serviços -->
+    <div id="services-area" class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <h2 class="main-title">
-                    Our specialties
-                </h2>
+                <h2 class="main-title">Serviços</h2>
             </div>
-            <div class="col-12 col-md-4 service-box">
-                <i class="fa-solid fa-at"></i> 
-                <h3>Pega esse icon</h3>
-                <p></p>
-            </div>
-            <div class="col-12 col-md-4 service-box">
-                <i class="fa-solid fa-globe"></i>
-                <h3>O mundo globo</h3>
-                <p></p>
-            </div>
-            <div class="col-12 col-md-4 service-box">
+            <div class="col-md-4 service-box">
                 <i class="fa-solid fa-mobile-screen-button"></i>
-                <h3>Android > Iphone</h3>
-                <p></p>
+                <h3>Aplicativos Nativos</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur accusamus pariatur esse, dolorem
+                    possimus aliquam quibusdam quae? Suscipit dolores.</p>
             </div>
-            <div class="col-12 col-md-4 service-box">
-                <i class="fa-solid fa-futbol"></i> 
-                <h3>Flamengo e nada mais</h3>
-                <p></p>
+            <div class="col-md-4 service-box">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h3>E-commerces</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur accusamus pariatur esse, dolorem
+                    possimus aliquam quibusdam quae? Suscipit dolores.</p>
             </div>
-            <div class="col-12 col-md-4 service-box">
-                <i class="fa-solid fa-bolt"></i>
-                <h3>Eu dou choque no seu sistema</h3>
-                <p></p>
+            <div class="col-md-4 service-box">
+                <i class="fa-solid fa-paintbrush"></i>
+                <h3>Design Criativo</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur accusamus pariatur esse, dolorem
+                    possimus aliquam quibusdam quae? Suscipit dolores.</p>
             </div>
-            <div class="col-12 col-md-4 service-box">
-                <i class="fa-solid fa-house-flag"></i>
-                <h3>Casa com bandeira</h3>
-                <p></p>
+            <div class="col-md-4 service-box">
+                <i class="fa-brands fa-google"></i>
+                <h3>Experts em SEO</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur accusamus pariatur esse, dolorem
+                    possimus aliquam quibusdam quae? Suscipit dolores.</p>
+            </div>
+            <div class="col-md-4 service-box">
+                <i class="fa-solid fa-handshake-angle"></i>
+                <h3>Suporte 24/7</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur accusamus pariatur esse, dolorem
+                    possimus aliquam quibusdam quae? Suscipit dolores.</p>
+            </div>
+            <div class="col-md-4 service-box">
+                <i class="fa-solid fa-server"></i>
+                <h3>Experiência em servidores</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur accusamus pariatur esse, dolorem
+                    possimus aliquam quibusdam quae? Suscipit dolores.</p>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <!-- Dados -->
+    <div id="data-area" class="container-fluid">
+        <div class="row text-center">
+            <div class="col-md-3 col-xs-6 circle-box">
+                <div id="circleA"></div>
+                <p>Clientes Felizes</p>
+            </div>
+            <div class="col-md-3 col-xs-6 circle-box">
+                <div id="circleB"></div>
+                <p>Apps Desenvolvidos</p>
+            </div>
+            <div class="col-md-3 col-xs-6 circle-box">
+                <div id="circleC"></div>
+                <p>Desenvolvedores</p>
+            </div>
+            <div class="col-md-3 col-xs-6 circle-box">
+                <div id="circleD"></div>
+                <p>Linhas de Código</p>
             </div>
         </div>
     </div>
-
-    <!-- Header -->
-
-</body>
-
-</html>
-
-    <!-- Header -->
-
-
-    <!-- Time -->
-    <div id="tema-area" class="container md-5">
+    <!-- time -->
+    <div id="team-area" class="container">
         <div class="row">
             <div class="col-12">
                 <h2 class="main-title">Nosso time</h2>
             </div>
-            <div class="col-xl-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/profile1.jpg" class="card-img-top" alt="Carlos da Silva Machado">
+            <div class="col-md-6 col-xl-3">
+                <div class="card text-center">
+                    <img src="img/profile1.jpg" alt="nome: colaborador" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title">Carlos da Silva Machado</h5>
-                        <p class="card-text">Nerd demais</p>
+                        <h5 class="card-title">Card title</h5>
+                        <P class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum error quis
+                            repudiandae aliquam ea ullam! Odio, enim deserunt id, labore magnam veniam tempore, itaque
+                            reprehenderit voluptatem sit ex magni illum.</P>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3">
+                <div class="card text-center">
+                    <img src="img/profile2.jpg" alt="nome: colaborador" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <P class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum error quis
+                            repudiandae aliquam ea ullam! Odio, enim deserunt id, labore magnam veniam tempore, itaque
+                            reprehenderit voluptatem sit ex magni illum.</P>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/profile2.jpg" class="card-img-top" alt="Maria de Assis Tencia">
+                <div class="card text-center">
+                    <img src="img/profile3.jpg" alt="nome: colaborador" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title">Maria de Assis Tencia</h5>
-                        <p class="card-text">Fofoca demais essa pessoa</p>
+                        <h5 class="card-title">Card title</h5>
+                        <P class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum error quis
+                            repudiandae aliquam ea ullam! Odio, enim deserunt id, labore magnam veniam tempore, itaque
+                            reprehenderit voluptatem sit ex magni illum.</P>
                     </div>
                 </div>
             </div>
+
             <div class="col-xl-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/profile3.jpg" class="card-img-top" alt="Victor Pedro Miguel Rosa">
+                <div class="card text-center">
+                    <img src="img/profile4.jpg" alt="nome: colaborador" class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title">Victor Pedro Miguel Rosa</h5>
-                        <p class="card-text">Faz planilha igual a cara</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/profile4.jpg" class="card-img-top" alt="Ana de Paula da Rocha">
-                    <div class="card-body">
-                        <h5 class="card-title">Ana de Paula da Rocha</h5>
-                        <p class="card-text">Ta doido pra ser mandado embora</p>
+                        <h5 class="card-title">Card title</h5>
+                        <P class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum error quis
+                            repudiandae aliquam ea ullam! Odio, enim deserunt id, labore magnam veniam tempore, itaque
+                            reprehenderit voluptatem sit ex magni illum.</P>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!--Parte de projetos  -->
+    
+    <div id="project-area" class="container">
+        <div class="row">
+            <div id="botoes" class="col-12">
+                <div class="col-md-3">
+                    <a class="btn btn-primary text-uppercase" id="todos" href="#" role="button">Todos</a>
+                </div>
+                <div class="col-md-3">
+                    <a class="btn btn-primary text-uppercase" id="desenvolvimento" href="#" role="button">Desenvolvimento</a>
+                </div>
+                <div class="col-md-3">
+                    <a class="btn btn-primary text-uppercase" id="design" href="#" role="button">Design</a>
+                </div>
+                <div class="col-md-3">
+                    <a class="btn btn-primary text-uppercase" id="seo" href="#" role="button">SEO</a>
+                </div>
+            </div>
+            <!-- <div class="col-12">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="col-12">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- trabalhe conosco -->
+    <div id="apply-area" class="container-fluid">
+        <div class="row">
+            <div id="apply-img" class="col-md-6"></div>
+            <div id="apply-content" class="col-md-6">
+                <h4 class="title-uppercase">Gosta de desafios</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum e</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum e</p>
+                <a id="saiba-mais" class="btn btn-primary text-uppercase" href="#" role="button">Saiba mais</a>
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+    </div>
+    <!--  dados-->
 </body>
 
 </html>

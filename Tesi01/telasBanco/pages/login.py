@@ -58,7 +58,7 @@ class Tela:
 
     def verificar_login(self, email, senha):
         for cliente in self.clientes_cadastrados:
-            if cliente._Cliente__nome == email and cliente._Cliente__cpf == senha:
+            if cliente._Cliente__email == email and cliente._Cliente__senha == senha:
                 return cliente
         return None
 
