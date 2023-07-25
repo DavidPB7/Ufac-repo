@@ -1,17 +1,23 @@
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import ttk
-from relatorio import Relatorio
+import Relatorio
 
 
-class Tela:
+class Perfil:
     ####### PERFIL ########
     def __init__(self, master):
         self.janela = master
         self.janela.title('Banco Pague Mais Juros - PERFIL')
         self.janela.geometry('400x400')
 
+        self.validate_valor = tk.StringVar()  # Definir a variável no escopo da classe
+        self.validate_valor.set(' ')
 
+        self.validate_tipo = tk.StringVar()  # Definir a variável no escopo da classe
+        self.validate_tipo.set(' ')
+
+        
         # Label Frame 01
         self.lbl_frm_one = tk.LabelFrame(self.janela, text='Meu Perfil: ', font=('Tahoma', 12), height=100, width=100)
         self.lbl_frm_one.pack(anchor=tk.CENTER, pady=10)
@@ -85,8 +91,10 @@ class Tela:
 
         self.lbl_nome = tk.Label(self.lbl_detalhes, text="Nome: Carlos da Silva")
         self.lbl_nome.pack()
+
         self.lbl_tipo_conta = tk.Label(self.lbl_detalhes, text="Tipo da Conta: Corrente e Poupança")
         self.lbl_tipo_conta.pack()
+
         self.email = tk.Label(self.lbl_detalhes,  text="carlin132@gmail.com")
         self.email.pack()
 
@@ -124,18 +132,13 @@ class Tela:
         self.lbl03.insert(tk.END, "R$0,00")
         self.lbl03.pack(pady=15, padx=10)
 
-        self.rbt1 = tk.Radiobutton(self.frm_label1, text='Conta Poupança', value='pp')
+        self.rbt1 = tk.Radiobutton(self.frm_label1, text='Conta Poupança', value='pp', variable=self.tipo_conta)
         self.rbt1.pack()
-        self.rbt2 = tk.Radiobutton(self.frm_label1, text='Conta Corrente', value='pc')
+        self.rbt2 = tk.Radiobutton(self.frm_label1, text='Conta Corrente', value='pc', variable=self.tipo_conta)
         self.rbt2.pack()
 
         self.lbl04 = tk.Button(self.frm_label1, text="Confirmar", width=7, height=1, font=4, bg="#50fa7d", activebackground='#0afa49', command=self.confirmar)
         self.lbl04.pack(pady=5)
-
-
-
-
-
 
 
     # Tela para transfência
@@ -167,19 +170,17 @@ class Tela:
         self.lbl02 = tk.Label(self.frm_label2, text="Saldo disponível em conta: R$40,44")
         self.lbl02.pack()
 
-        self.lbl03 = tk.Entry(self.frm_label2)
+        self.lbl03 = tk.Entry(self.frm_label2,  textvariable=self.validate_valor)
         self.lbl03.insert(tk.END, "R$0,00")
         self.lbl03.pack(pady=15, padx=10)
 
-        self.rbt1 = tk.Radiobutton(self.frm_label2, text='Conta Poupança', value='pp')
+        self.rbt1 = tk.Radiobutton(self.frm_label2, text='Conta Poupança',  value='pp', variable=self.tipo_conta)
         self.rbt1.pack()
-        self.rbt2 = tk.Radiobutton(self.frm_label2, text='Conta Corrente', value='pc')
+        self.rbt2 = tk.Radiobutton(self.frm_label2, text='Conta Corrente', value='pc', variable=self.tipo_conta)
         self.rbt2.pack()
 
         self.lbl04 = tk.Button(self.frm_label2, text="Confirmar", width=7, height=1, font=4, bg="#50fa7d", activebackground='#0afa49',  command=self.confirmar)
         self.lbl04.pack(pady=5)
-
-
 
 
     # Tela para Deposito
@@ -213,13 +214,13 @@ class Tela:
         self.lbl02 = tk.Label(self.frm_label3, text="Saldo disponível em conta: R$40,44")
         self.lbl02.pack()
 
-        self.lbl03 = tk.Entry(self.frm_label3)
+        self.lbl03 = tk.Entry(self.frm_label3,  textvariable=self.validate_valor)
         self.lbl03.insert(tk.END, "R$0,00")
         self.lbl03.pack(pady=15, padx=10)
 
-        self.rbt1 = tk.Radiobutton(self.frm_label3, text='Conta Poupança', value='pp')
+        self.rbt1 = tk.Radiobutton(self.frm_label3, text='Conta Poupança', value='pp', variable=self.tipo_conta)
         self.rbt1.pack()
-        self.rbt2 = tk.Radiobutton(self.frm_label3, text='Conta Corrente', value='pc')
+        self.rbt2 = tk.Radiobutton(self.frm_label3, text='Conta Corrente', value='pc', variable=self.tipo_conta)
         self.rbt2.pack()
 
         self.lbl04 = tk.Button(self.frm_label3, text="Confirmar", width=7, height=1, font=4, bg="#50fa7d", activebackground='#0afa49',  command=self.confirmar)
@@ -238,7 +239,7 @@ class Tela:
 
 
 app = tk.Tk()
-Tela(app)
+Perfil(app)
 app.mainloop()
 
 # Apagar texto de um entry como um placeholder
