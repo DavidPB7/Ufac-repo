@@ -57,10 +57,22 @@ class Tela:
         self.btn_register.grid(row=0, column=2, padx=5, pady=10)
 
     def verificar_login(self, email, senha):
-        for cliente in self.clientes_cadastrados:
-            if cliente._Cliente__email == email and cliente._Cliente__senha == senha:
-                return cliente
-        return None
+        if email == "admin@gmail.com" and senha == "123" :
+            self.janela.withdraw()
+            self.janela_admin()
+        else:
+            for cliente in self.clientes_cadastrados:
+                if cliente._Cliente__email == email and cliente._Cliente__senha == senha:
+                    return cliente
+            return None
+        
+    def janela_admin(self):
+        self.top_janela_admin = tk.Toplevel(self.janela)
+        self.top_janela_admin.title('Banco Pague Mais Juros')
+        self.top_janela_admin.geometry('1280x960')
+        self.top_janela_admin.config(bg='#f1dec3')
+
+
 
     def entrar(self):
         email = self.validate_email.get()
@@ -198,7 +210,6 @@ class Tela:
         self.toplevel.destroy()
         self.janela.deiconify()
 
-    ####### CADASTRO CLIENTES ########
 
     ####### CADASTRO CLIENTES ########
     def cadastro_cliente(self):
