@@ -1,0 +1,61 @@
+import tkinter as tk
+from tkinter import ttk
+from PIL import Image, ImageTk  # Importe a classe Image e ImageTk do Pillow
+
+# Funções para as ações dos botões da barra de navegação
+def abrir_pagina_inicial():
+    # Implemente a lógica para abrir a página inicial aqui
+    pass
+
+def abrir_perfil():
+    # Implemente a lógica para abrir o perfil aqui
+    pass
+
+def sair_da_conta():
+    # Implemente a lógica para sair da conta do usuário aqui
+    pass
+
+# Configuração da janela principal
+root = tk.Tk()
+root.title("Navegação com Tkinter")
+
+# Configurar a barra de navegação
+nav_bar = ttk.Frame(root)
+nav_bar.pack(fill="x")
+
+# Botões da barra de navegação
+inicio_button = ttk.Button(nav_bar, text="Página Inicial", command=abrir_pagina_inicial)
+perfil_button = ttk.Button(nav_bar, text="Perfil", command=abrir_perfil)
+sair_button = ttk.Button(nav_bar, text="Sair", command=sair_da_conta)
+
+inicio_button.pack(side="left")
+perfil_button.pack(side="left")
+sair_button.pack(side="right")
+
+# Configurar a grade de botões com imagens
+car_brands = ["Toyota", "Ford", "Honda", "Chevrolet", "Volkswagen", "BMW", "Mercedes"]
+
+car_list = ttk.Frame(root)
+car_list.pack(pady=20)
+
+# Carregar e redimensionar imagens para as marcas de carros
+car_images = [
+    Image.open("toyota.png").resize((100, 100)),
+    Image.open("ford.png").resize((100, 100)),
+    Image.open("honda.png").resize((100, 100)),
+    Image.open("chevrolet.png").resize((100, 100)),
+    Image.open("volkswagen.png").resize((100, 100)),
+    Image.open("bmw.png").resize((100, 100)),
+    Image.open("mercedes.png").resize((100, 100)),
+]
+
+# Converter as imagens para o formato compatível com Tkinter
+tk_images = [ImageTk.PhotoImage(image) for image in car_images]
+
+for i, brand in enumerate(car_brands):
+    car_button = ttk.Button(car_list, image=tk_images[i], text=brand, compound="top")
+    car_button.grid(row=i // 3, column=i % 3, padx=10, pady=10, sticky="nsew")
+    car_list.grid_columnconfigure(i % 3, weight=1)  # Para centralizar na coluna
+    car_list.grid_rowconfigure(i // 3, weight=1)  # Para centralizar na linha
+
+root.mainloop()
