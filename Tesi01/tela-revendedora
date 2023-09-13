@@ -15,22 +15,26 @@ def sair_da_conta():
     # Implemente a lógica para sair da conta do usuário aqui
     pass
 
-# Configuração da janela principal
 root = tk.Tk()
 root.title("Navegação com Tkinter")
+
+# Estilo para a barra de navegação
+style = ttk.Style()
+style.configure('NavBar.TButton', font=('Helvetica', 12))
 
 # Configurar a barra de navegação
 nav_bar = ttk.Frame(root)
 nav_bar.pack(fill="x")
 
 # Botões da barra de navegação
-inicio_button = ttk.Button(nav_bar, text="Página Inicial", command=abrir_pagina_inicial)
-perfil_button = ttk.Button(nav_bar, text="Perfil", command=abrir_perfil)
-sair_button = ttk.Button(nav_bar, text="Sair", command=sair_da_conta)
+inicio_button = ttk.Button(nav_bar, text="Página Inicial", command=abrir_pagina_inicial, style='NavBar.TButton')
+perfil_button = ttk.Button(nav_bar, text="Perfil", command=abrir_perfil, style='NavBar.TButton')
+sair_button = ttk.Button(nav_bar, text="Sair", command=sair_da_conta, style='NavBar.TButton')
 
-inicio_button.pack(side="left")
-perfil_button.pack(side="left")
-sair_button.pack(side="right")
+inicio_button.grid(row = 0, column = 0, pady = 2)
+perfil_button.grid(row = 0, column = 1, pady = 2)
+sair_button.grid(row = 0, column = 2, pady = 2)
+
 
 # Configurar a grade de botões com imagens
 car_brands = ["Fiat", "Volkswagen", "Chevrolet", "Toyota", "Hyundai", "Ford", "Jeep", "Honda", "Renault", "Nissan"]
